@@ -58,8 +58,8 @@ const Navbar = () => {
                 <button className="nav-icon-btn theme-toggle" onClick={toggleTheme} aria-label="Toggle Theme">
                   {theme === 'dark' ? <FiSun size={16} /> : <FiMoon size={16} />}
                 </button>
-                <a className="nav-icon-btn" href="#" aria-label="Login"><FiUser size={16} /></a>
-                <a className="nav-icon-btn primary" href="#" aria-label="Cart"><FiShoppingBag size={16} /></a>
+                <a className="nav-icon-btn" href="#login" aria-label="Login"><FiUser size={16} /></a>
+                <a className="nav-icon-btn primary" href="#home" aria-label="Cart"><FiShoppingBag size={16} /></a>
               </div>
             </div>
 
@@ -99,8 +99,8 @@ const Navbar = () => {
                 <button className="mobile-icon-btn-outline theme-toggle" onClick={toggleTheme}>
                   {theme === 'dark' ? <FiSun size={18} /> : <FiMoon size={18} />}
                 </button>
-                <a className="mobile-icon-btn-outline" href="#"><FiUser size={18} /></a>
-                <a className="mobile-icon-btn-filled" href="#"><FiShoppingBag size={18} /></a>
+                <a className="mobile-icon-btn-outline" href="#login"><FiUser size={18} /></a>
+                <a className="mobile-icon-btn-filled" href="#home"><FiShoppingBag size={18} /></a>
               </div>
             </div>
           </div>
