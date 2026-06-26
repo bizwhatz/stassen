@@ -1,0 +1,350 @@
+/* ─── NAVBAR ─────────────────────────────────────────────── */
+.stassen-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1030;
+  background: rgba(8, 8, 8, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(212,171,69,0.1);
+  transition: background .35s ease, box-shadow .35s ease, border-color .35s ease;
+  will-change: background;
+}
+
+.stassen-nav.nav--scrolled {
+  background: rgba(6, 6, 6, 0.96);
+  border-bottom-color: rgba(212,171,69,0.18);
+  box-shadow: 0 4px 28px rgba(0,0,0,0.6);
+}
+
+/* Gold accent line at very top */
+.nav-gold-line {
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(212,171,69,0.4) 20%,
+    #d4ab45 50%,
+    rgba(212,171,69,0.4) 80%,
+    transparent 100%
+  );
+}
+
+.stassen-nav-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* 3-column grid: left | center | right */
+.nav-wrap {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  min-height: 82px;
+  transition: min-height .35s ease;
+}
+
+.stassen-nav.nav--scrolled .nav-wrap {
+  min-height: 58px;
+}
+
+/* ── Left ── */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: .1rem;
+  padding-right: 2rem;
+  position: relative;
+}
+
+.nav-left::after {
+  content: "";
+  position: absolute; right: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 1px; height: 28px;
+  background: linear-gradient(180deg, transparent, rgba(212,171,69,0.3), transparent);
+}
+
+/* ── Center brand ── */
+.brand-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 1.5rem;
+  text-decoration: none;
+}
+
+.brand-text-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.brand-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #d4ab45;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.brand-tagline {
+  font-family: "Open Sans", sans-serif;
+  font-size: .6rem;
+  font-weight: 600;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: rgba(240,236,228,0.45);
+}
+
+.stassen-nav.nav--scrolled .brand-name { font-size: 1.35rem; }
+
+/* ── Right ── */
+.nav-right-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-left: 2rem;
+  position: relative;
+}
+
+.nav-right-wrap::before {
+  content: "";
+  position: absolute; left: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 1px; height: 28px;
+  background: linear-gradient(180deg, transparent, rgba(212,171,69,0.3), transparent);
+}
+
+.nav-links-right {
+  display: flex;
+  align-items: center;
+  gap: .1rem;
+}
+
+/* ── Nav link ── */
+.nav-link {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.08rem;
+  font-weight: 500;
+  letter-spacing: .06em;
+  color: rgba(240,236,228,0.82);
+  padding: .35rem .6rem;
+  white-space: nowrap;
+  text-decoration: none;
+  position: relative;
+  transition: color .25s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: .75rem; right: .75rem;
+  bottom: 0;
+  height: 1.5px;
+  background: linear-gradient(90deg, #d4ab45, #c9a030);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .3s cubic-bezier(.4,0,.2,1);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #d4ab45;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+/* ── Action icon buttons ── */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  margin-left: 1rem;
+  padding-left: 1rem;
+  border-left: 1px solid rgba(212,171,69,0.12);
+}
+
+.nav-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px; height: 34px;
+  border: 1px solid rgba(240,236,228,0.15);
+  border-radius: 50%;
+  color: rgba(240,236,228,0.75);
+  background: transparent;
+  font-size: .95rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color .2s ease, color .2s ease, background .2s ease;
+}
+
+.nav-icon-btn:hover {
+  border-color: rgba(212,171,69,0.5);
+  color: #d4ab45;
+  background: rgba(212,171,69,0.08);
+}
+
+.nav-icon-btn.primary {
+  background: #d4ab45;
+  border-color: #d4ab45;
+  color: #0a0802;
+}
+
+.nav-icon-btn.primary:hover {
+  background: #c9a030;
+  border-color: #c9a030;
+}
+
+/* ── Mobile toggler ── */
+.nav-toggler {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px; height: 36px;
+  border: 1px solid rgba(212,171,69,0.2);
+  border-radius: 3px;
+  background: transparent;
+  color: rgba(240,236,228,0.82);
+  cursor: pointer;
+  transition: border-color .2s ease, color .2s ease;
+}
+
+.nav-toggler:hover {
+  border-color: rgba(212,171,69,0.5);
+  color: #d4ab45;
+}
+
+/* ── Mobile fullscreen menu ── */
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  background: rgba(8, 8, 8, 0.95);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 2rem 2rem 2rem;
+  overflow-y: auto;
+}
+
+.mobile-close-icon {
+  position: absolute;
+  top: 30px; 
+  right: 30px;
+  color: #DCCA87;
+  cursor: pointer;
+  font-size: 32px;
+}
+
+.mobile-nav-links {
+  list-style: none;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 2rem;
+}
+
+.mobile-nav-link {
+  display: block;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 1rem 0;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: color .22s ease;
+}
+
+.mobile-nav-link:hover { color: #DCCA87; }
+
+.mobile-nav-bottom {
+  margin-top: auto;
+  width: 100%;
+  text-align: center;
+}
+
+.mobile-nav-bottom-text {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  color: #FFFFFF;
+  margin-bottom: 1.5rem;
+}
+
+.mobile-nav-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: 1rem;
+}
+
+.mobile-bottom-logo {
+  height: 25px;
+  width: auto;
+}
+
+.mobile-nav-bottom-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.mobile-icon-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 50%;
+  color: rgba(255,255,255,0.9);
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color .2s ease, color .2s ease;
+}
+.mobile-icon-btn-outline:hover {
+  border-color: #DCCA87;
+  color: #DCCA87;
+}
+
+.mobile-icon-btn-filled {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: #DCCA87;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+.mobile-icon-btn-filled:hover {
+  background: #c9a030;
+}
+
+/* ── Responsive ── */
+@media (max-width: 991px) {
+  .nav-left .nav-link { display: none; }
+  .nav-left::after { display: none; }
+  .nav-right-wrap::before { display: none; }
+  .nav-links-right { display: none; }
+  .nav-toggler { display: inline-flex; }
+  .nav-right-wrap { padding-left: 0; }
+  .brand-link img { height: 50px; }
+  .stassen-nav.nav--scrolled .brand-link img { height: 45px !important; }
+}

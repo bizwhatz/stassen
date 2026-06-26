@@ -1,0 +1,82 @@
+.app__specialMenu {
+  flex-direction: column;
+  background: var(--color-black);
+  width: 100vw;
+  max-width: 100vw;
+  padding: 4rem 0 !important;
+  overflow: hidden;
+}
+
+.app__specialMenu-title {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.app__specialMenu-carousel_wrapper {
+  position: relative;
+  width: 100vw;
+  max-width: 100vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.app__specialMenu-carousel_track {
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+  animation: scrollContinuous 25s linear infinite;
+  padding-left: 2rem;
+}
+
+.app__specialMenu-carousel_track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollContinuous {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.app__specialMenu-carousel_card {
+  min-width: 250px;
+  min-height: 420px;
+  height: auto;
+  margin-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: var(--color-card-bg);
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.app__specialMenu-carousel_card img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.app__specialMenu-carousel_card-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 650px) {
+  .app__specialMenu-carousel_card {
+    min-width: 200px;
+    margin-right: 1rem;
+  }
+  .app__specialMenu-carousel_track {
+    animation-duration: 15s;
+  }
+}
