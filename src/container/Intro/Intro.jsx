@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./Intro.css";
 
 // Intro is now repurposed as the Special Offers marquee section intro strip
