@@ -2,10 +2,40 @@ import React, { useRef } from 'react';
 import { BsInstagram, BsArrowLeftShort, BsArrowRightShort } from 'react-icons/bs';
 
 import { SubHeading } from '../../components';
-import { images } from '../../constants';
 import './Gallery.css';
 
-const galleryImages = [images.gallery01, images.gallery02, images.gallery03, images.gallery04, images.gallery05, images.gallery06];
+const galleryImages = [
+  '/stassen/gallery/Al-Falaj.jpg',
+  '/stassen/gallery/Al-Falaj-2.jpg',
+  '/stassen/gallery/Al-Falaj-3.jpg',
+  '/stassen/gallery/Al-Falaj-4.jpg',
+  '/stassen/gallery/Al-Falaj-5.jpg',
+  '/stassen/gallery/Al-Falaj-6.jpg',
+  '/stassen/gallery/Al-Falaj-7.jpg',
+  '/stassen/gallery/Al-Falaj-8.jpg',
+  '/stassen/gallery/Al-Falaj-9.jpg',
+  '/stassen/gallery/Al-Falaj-10.jpg',
+  '/stassen/gallery/Al-Falaj-11.jpg',
+  '/stassen/gallery/Al-Falaj-12.jpg',
+  '/stassen/gallery/Al-Falaj-13.jpg',
+  '/stassen/gallery/Al-Falaj-14.jpg',
+  '/stassen/gallery/Al-Falaj-15.jpg',
+  '/stassen/gallery/Al-Falaj-16.jpg',
+  '/stassen/gallery/Al-Falaj-17.jpg',
+  '/stassen/gallery/Al-Falaj-18.jpg',
+  '/stassen/gallery/Al-Falaj-19.jpg',
+  '/stassen/gallery/Al-Falaj-20.jpg',
+  '/stassen/gallery/Al-Falaj-21.jpg',
+  '/stassen/gallery/Al-Falaj-22.jpg',
+  '/stassen/gallery/Al-Falaj-23.jpg',
+  '/stassen/gallery/Al-Falaj-24.jpg',
+  '/stassen/gallery/Al-Falaj-25.jpg',
+  '/stassen/gallery/Al-Falaj-26.jpg',
+  '/stassen/gallery/Al-Falaj-53.jpg',
+  '/stassen/gallery/Al-Falaj-54.jpg',
+  '/stassen/gallery/Al-Falaj-55.jpg',
+  '/stassen/gallery/Al-Falaj-56.jpg',
+];
 
 const Gallery = () => {
   const scrollRef = useRef(null);
